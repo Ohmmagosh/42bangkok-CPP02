@@ -6,7 +6,7 @@
 #    By: psuanpro <Marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/17 03:11:26 by psuanpro          #+#    #+#              #
-#    Updated: 2023/02/20 02:24:56 by psuanpro         ###   ########.fr        #
+#    Updated: 2023/02/25 19:52:20 by psuanpro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,9 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp \
-	newZombie.cpp \
-	randomChump.cpp \
-	Zombie.cpp
+	Fixed.cpp \
+	Point.cpp \
+	bsp.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: psuanpro <Marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 02:41:25 by psuanpro          #+#    #+#             */
-/*   Updated: 2023/02/25 01:19:48 by psuanpro         ###   ########.fr       */
+/*   Updated: 2023/02/25 19:49:40 by psuanpro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,8 @@ class Point {
 		Fixed	gY( void ) const;
 		~Point();
 };
+
+Fixed	triangleArea( Point const a, Point const b, Point const c );
+bool	bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif
