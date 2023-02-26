@@ -6,7 +6,7 @@
 /*   By: psuanpro <Marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 02:36:29 by psuanpro          #+#    #+#             */
-/*   Updated: 2023/02/24 21:51:45 by psuanpro         ###   ########.fr       */
+/*   Updated: 2023/02/26 22:16:29 by psuanpro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,20 +40,24 @@ Fixed::~Fixed(){
 	std::cout << "Destructor called" << std::endl;
 }
 
-float	Fixed::operator+(const Fixed &cp) const{
-	return this->toFloat() + cp.toFloat();
+Fixed	Fixed::operator+(const Fixed &cp) const{
+	Fixed ret(this->toFloat() + cp.toFloat());
+	return ret;
 }
 
-float	Fixed::operator-(const Fixed &cp) const{
-	return this->toFloat() - cp.toFloat();
+Fixed	Fixed::operator-(const Fixed &cp) const{
+	Fixed ret(this->toFloat() - cp.toFloat());
+	return ret;
 }
 
-float	Fixed::operator*(const Fixed &cp) const{
+Fixed	Fixed::operator*(const Fixed &cp) const{
+	Fixed ret(this->toFloat() * cp.toFloat());
 	return this->toFloat() * cp.toFloat();
 }
 
-float	Fixed::operator/(const Fixed &cp) const{
-	return this->toFloat() / cp.toFloat();
+Fixed	Fixed::operator/(const Fixed &cp) const{
+	Fixed ret(this->toFloat() / cp.toFloat());
+	return ret;
 }
 
 bool	Fixed::operator<(const Fixed &cp) const{

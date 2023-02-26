@@ -6,7 +6,7 @@
 /*   By: psuanpro <Marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 02:36:29 by psuanpro          #+#    #+#             */
-/*   Updated: 2023/02/25 19:52:55 by psuanpro         ###   ########.fr       */
+/*   Updated: 2023/02/26 22:01:54 by psuanpro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,9 @@ Fixed::Fixed( const int fixpoint ): _fixpoint(fixpoint << _fractional_bits){
 }
 
 Fixed::Fixed( const float fixpoint ): _fixpoint(roundf(fixpoint * (1 << _fractional_bits))){
-	//std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed&	Fixed::operator=( const Fixed& cp ) {
-	//std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &cp)
 		this->setRawBits(cp.getRawBits());
 	return (*this);
@@ -40,19 +38,22 @@ Fixed::~Fixed(){
 	//std::cout << "Destructor called" << std::endl;
 }
 
-float	Fixed::operator+( const Fixed &cp ) const{
-	return this->toFloat() + cp.toFloat();
+
+Fixed	Fixed::operator+( const Fixed &cp ) const{
+	Fixed ret(this->toFloat() + cp.toFloat());
+	return ret;
 }
 
-float	Fixed::operator-( const Fixed &cp ) const{
-	return this->toFloat() - cp.toFloat();
+Fixed	Fixed::operator-( const Fixed &cp ) const{
+	Fixed ret(this->toFloat() - cp.toFloat());
+	return ret;
 }
 
-float	Fixed::operator*( const Fixed &cp ) const{
+Fixed	Fixed::operator*( const Fixed &cp ) const{
 	return this->toFloat() * cp.toFloat();
 }
 
-float	Fixed::operator/( const Fixed &cp ) const{
+Fixed	Fixed::operator/( const Fixed &cp ) const{
 	return this->toFloat() / cp.toFloat();
 }
 

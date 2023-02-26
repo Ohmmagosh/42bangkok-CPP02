@@ -6,7 +6,7 @@
 /*   By: psuanpro <Marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 02:36:32 by psuanpro          #+#    #+#             */
-/*   Updated: 2023/02/25 17:13:05 by psuanpro         ###   ########.fr       */
+/*   Updated: 2023/02/26 21:51:57 by psuanpro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ class Fixed {
 		Fixed& operator=( const Fixed &cp );
 		~Fixed();
 
-		float	operator+( const Fixed &cp ) const;
-		float	operator-( const Fixed &cp ) const;
-		float	operator*( const Fixed &cp ) const;
-		float	operator/( const Fixed &cp ) const;
+		Fixed	operator+( const Fixed &cp ) const;
+		Fixed	operator-( const Fixed &cp ) const;
+		Fixed	operator*( const Fixed &cp ) const;
+		Fixed	operator/( const Fixed &cp ) const;
 
 		bool	operator<( const Fixed &cp ) const;
 		bool	operator>( const Fixed &cp ) const;
